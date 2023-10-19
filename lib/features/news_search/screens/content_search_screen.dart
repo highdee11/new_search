@@ -21,8 +21,8 @@ class ContentSearchScreen extends StatelessWidget {
     return Scaffold(
       appBar: const CustomTextAppBar(
         title: "Search",
+        leading: null
       ),
-      backgroundColor: Colors.white,
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 15),
         child: SizedBox(

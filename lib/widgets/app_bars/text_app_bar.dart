@@ -19,12 +19,11 @@ class CustomTextAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget lead = leading ?? LeadingIcon(child: SvgPicture.asset("assets/svgs/back_arrow.svg"));
 
     return AppBar(
       elevation: 0,
       leadingWidth: 52,
-      leading: lead,
+      leading: leading,
       title: Text(title,
           style: Theme.of(context).textTheme.headlineSmall?.
           copyWith(color: Colors.black,

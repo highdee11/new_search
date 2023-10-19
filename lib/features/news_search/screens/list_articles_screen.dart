@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:newsapp/core/config/brand_config.dart';
 import 'package:newsapp/features/news_search/models/article_model.dart';
 import 'package:newsapp/features/news_search/widget/article_item.dart';
 import 'package:newsapp/widgets/app_bars/text_app_bar.dart';
+
+import '../../../widgets/app_bars/leading_icon.dart';
 
 class ListArticlesScreen extends StatefulWidget {
   final String query;
@@ -31,8 +34,10 @@ class _ListArticlesScreenState extends State<ListArticlesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomTextAppBar(title: widget.query),
-      backgroundColor: Colors.white,
+      appBar: CustomTextAppBar(
+        title: widget.query,
+        leading: LeadingIcon(child: SvgPicture.asset("assets/svgs/back_arrow.svg")),
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
         child: ListView.separated(

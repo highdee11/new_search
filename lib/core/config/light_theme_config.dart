@@ -8,7 +8,7 @@ class ThemeConfig {
   static final ThemeData lightTheme = ThemeData(
     colorScheme: BrandStyleConfig.colorScheme,
     primaryColor: BrandStyleConfig.primary,
-    scaffoldBackgroundColor: const Color(0xfffafafa),
+    scaffoldBackgroundColor: Colors.white,
     textTheme: BrandStyleConfig.textTheme.apply(displayColor: Colors.black, bodyColor: Colors.black),
     elevatedButtonTheme: BrandStyleConfig.elevatedButtonThemeData,
     primaryColorDark: Colors.black,
