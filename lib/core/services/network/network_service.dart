@@ -16,16 +16,9 @@ class NetworkService extends INetworkService {
   Future<NetworkResponse> get(String endpoint, {Map<String, String>? headers}) async {
     Uri uri = Uri.parse('$_baseURL$endpoint&apiKey=$_apiKey');
 
-    if (kDebugMode) {
-      print("Get: => ${uri.toString()} => $headers");
-    }
-
     http.Response response = await http.get(uri, headers: headers ?? {});
     NetworkResponse<Map> networkResponse = NetworkResponse<Map>(response);
 
-    if (kDebugMode) {
-      print(networkResponse.toString());
-    }
 
     return Future.value(networkResponse);
   }
