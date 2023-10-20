@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:newsapp/core/config/brand_config.dart';
 import 'package:newsapp/features/news_search/models/article_model.dart';
 import 'package:newsapp/features/news_search/widget/article_item.dart';
 import 'package:newsapp/widgets/app_bars/text_app_bar.dart';
-
 import '../../../widgets/app_bars/leading_icon.dart';
 
 class ListArticlesScreen extends StatefulWidget {
@@ -41,10 +39,7 @@ class _ListArticlesScreenState extends State<ListArticlesScreen> {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
         child: ListView.separated(
-          itemBuilder: (context, int index){
-            ArticleModel article = articles[index];
-            return ArticleItem(article: article);
-          },
+          itemBuilder: (context, int index)=> ArticleItem(article: articles[index]),
           separatorBuilder: (context, int index)=> const SizedBox(height: 15,),
           itemCount: articles.length
         ),

@@ -14,7 +14,9 @@ class ArticleItem extends StatelessWidget {
     return Material(
       color: Colors.grey.shade50,
       child: InkWell(
-        onTap: (){},
+        onTap: (){
+          //move to new details screen
+        },
         child: Container(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(5),
@@ -46,6 +48,19 @@ class ArticleItem extends StatelessWidget {
                         )))
                   ],
                 ),
+              ),
+
+              //Image
+              Container(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: NetworkImage(article.urlToImage!),
+                    fit: BoxFit.cover
+                  ),
+                  borderRadius: BorderRadius.circular(5)
+                ),
+                height: 100,
+                width: double.infinity,
               ),
 
               //Title and Body
@@ -100,6 +115,8 @@ class ArticleItem extends StatelessWidget {
                   ],
                 ),
               )
+
+
             ],
           ),
         ),
